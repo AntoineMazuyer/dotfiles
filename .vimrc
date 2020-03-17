@@ -6,8 +6,10 @@ call plug#begin('~/.vim/plugged')
   Plug 'vim-airline/vim-airline'          "Beautiful status bar 
   Plug 'airblade/vim-gitgutter'           "Git status
   Plug 'derekwyatt/vim-fswitch'           "Switch betweem .h  and .cpp
-  Plug 'Valloric/YouCompleteMe'           "Autocompletion
+  Plug 'ycm-core/YouCompleteMe'           "Autocompletion
   Plug 'sainnhe/vim-color-forest-night'   "Color scheme
+  Plug 'rust-lang/rust.vim'               "Rust
+  Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 call plug#end()
 
 """""""""
@@ -90,7 +92,8 @@ set laststatus=2
 set updatetime=100
 
 " YCM
-" let g:ycm_global_ycm_extra_conf = '~/.vim/plugged/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py'
+" let g:ycm_global_ycm_extra_conf = '~/.vim/plugged/YouCompleteMe/.ycm_extra_conf.py'
+let g:ycm_confirm_extra_conf = 0
 map <F9> :YcmCompleter FixIt<CR>
 
 " Airline
@@ -102,3 +105,6 @@ let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#whitespace#enabled = 0
+
+" Vim tous les jours
+let g:vimtlj_main_dir = '/home/amazuyer/vimtlj'
